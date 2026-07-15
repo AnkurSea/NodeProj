@@ -1,18 +1,3 @@
 {
     "git.postCommitCommand": "sync",
-    
-  "emeraldwalk.runonsave": {
-    "autoClearConsole": false,
-    "ignoreUnchangedFiles": false,
-    "shell": "",
-    "commands": [
-      {
-        "match": "\\.js$",
-        //"cmd": "echo 'Hi';",
-        "cmd": "dir",
-        //"cmd": "git add .;git commit -m 'Auto-commit on save'; git push",
-        "isAsync": false
-      }
-    ]
-  }
 }
