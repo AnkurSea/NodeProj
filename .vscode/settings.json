@@ -9,7 +9,7 @@
       {
         "match": "\\.js$",
         //"cmd": "echo 'Hi';",
-        "cmd": "test.bat",
+        "cmd": "dir",
         //"cmd": "git add .;git commit -m 'Auto-commit on save'; git push",
         "isAsync": false
       }

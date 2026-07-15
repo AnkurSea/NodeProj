@@ -1,15 +1,17 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "echo",
-            "type": "shell",
-            "command": "echo Hello",
-            "runOptions": {
-                "runOn": "folderOpen"
-            }
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // A human-readable name for the task
+      "label": "Hello World",
+      // Task type
+      "type": "shell",
+      // The executable or script to run
+      "command": "git add .",                              
+      // Arguments to pass to the command
+      //"args": ["Hello, VS Code Tasks!"],              
+      // Information shown in Command Palette
+      //"detail": "Prints a simple greeting message"    
+    }
+  ]
 }
