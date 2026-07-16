@@ -26,25 +26,25 @@ pipeline {
             }
         }
 
-        stage('Stop Previous Container') {
-            steps {
-                echo 'Stopping previous container...'
-                script {
-                    bat '"'
-                        if docker ps -a --format '{{.Names}}' | grep -q ${CONTAINER_NAME}; then
-                            docker stop ${CONTAINER_NAME}
-                            docker rm ${CONTAINER_NAME}
-                        fi
-                    '"'
-                }
-            }
-        }
+        // stage('Stop Previous Container') {
+        //     steps {
+        //         echo 'Stopping previous container...'
+        //         script {
+        //             bat '"'
+        //                 if docker ps -a --format '{{.Names}}' | grep -q ${CONTAINER_NAME}; then
+        //                     docker stop ${CONTAINER_NAME}
+        //                     docker rm ${CONTAINER_NAME}
+        //                 fi
+        //             '"'
+        //         }
+        //     }
+        // }
 
         stage('Run Docker Container') {
             steps {
                 echo 'Running Docker container...'
                 script {
-                    bat "docker run -d -p ${PORT}:3000 --name ${CONTAINER_NAME} ${DOCKER_IMAGE}:latest"
+                    bat "docker run -d -p ${PORT}:3000 --name ${CONTAINER_NAME} ${DOCKER_IMAGE}"
                 }
             }
         }
