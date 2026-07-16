@@ -20,8 +20,8 @@ pipeline {
             steps {
                 echo 'Building Docker image...'
                 script {
-                    bat "docker build -t ${DOCKER_IMAGE} ."
-                   // bat 'docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest'
+                    bat "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
+                    bat "docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest"
                 }
             }
         }
@@ -75,7 +75,7 @@ pipeline {
         failure {
             echo 'Deployment failed!'
             script {
-                bat 'docker logs ${CONTAINER_NAME} || true'
+                bat "docker logs ${CONTAINER_NAME} || true"
             }
         }
     }
