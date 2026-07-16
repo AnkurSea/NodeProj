@@ -15,7 +15,7 @@ COPY --from=builder /app/node_modules ./node_modules
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 4000
 
 # CMD ["npm", "run", "dev"]
 CMD ["npm", "start"]
