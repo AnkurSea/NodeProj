@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Building Docker image...'
                 script {
-                    bat 'docker build -t ${DOCKER_IMAGE} .'
+                    bat "docker build -t ${DOCKER_IMAGE} ."
                    // bat 'docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest'
                 }
             }
