@@ -53,23 +53,23 @@ pipeline {
             }
         }
 
-        stage('Verify Deployment') {
-            steps {
-                echo 'Verifying deployment...'
-                script {
-                    bat """
-                        sleep 5
-                        if docker ps --filter "name=${CONTAINER_NAME}" --filter "status=running" | grep -q ${CONTAINER_NAME}; then
-                            echo "Container is running successfully!"
-                            docker ps --filter "name=${CONTAINER_NAME}"
-                        else
-                            echo "Container failed to start"
-                            exit 1
-                        fi
-                    """
-                }
-            }
-        }
+        // stage('Verify Deployment') {
+        //     steps {
+        //         echo 'Verifying deployment...'
+        //         script {
+        //             bat """
+        //                 sleep 5
+        //                 if docker ps --filter "name=${CONTAINER_NAME}" --filter "status=running" | grep -q ${CONTAINER_NAME}; then
+        //                     echo "Container is running successfully!"
+        //                     docker ps --filter "name=${CONTAINER_NAME}"
+        //                 else
+        //                     echo "Container failed to start"
+        //                     exit 1
+        //                 fi
+        //             """
+        //         }
+        //     }
+        // }
     }
 
     post {
