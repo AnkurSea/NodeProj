@@ -20,8 +20,8 @@ pipeline {
             steps {
                 echo 'Building Docker image...'
                 script {
-                    sh 'docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} --target production .'
-                    sh 'docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest'
+                    bat 'docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} --target production .'
+                    bat 'docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest'
                 }
             }
         }
