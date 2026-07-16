@@ -48,7 +48,7 @@ pipeline {
             steps {
                 echo 'Running Docker container...'
                 script {
-                    bat "docker run -d -p ${PORT}:3000 --name ${CONTAINER_NAME} ${DOCKER_IMAGE}"
+                    bat "docker run -d -p ${PORT}:4000 --name ${CONTAINER_NAME} ${DOCKER_IMAGE}"
                 }
             }
         }
