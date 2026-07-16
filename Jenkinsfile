@@ -53,7 +53,7 @@ pipeline {
             steps {
                 echo 'Verifying deployment...'
                 script {
-                    bat '"'
+                    bat """
                         sleep 5
                         if docker ps --filter "name=${CONTAINER_NAME}" --filter "status=running" | grep -q ${CONTAINER_NAME}; then
                             echo "Container is running successfully!"
@@ -62,7 +62,7 @@ pipeline {
                             echo "Container failed to start"
                             exit 1
                         fi
-                    '"'
+                    """
                 }
             }
         }
