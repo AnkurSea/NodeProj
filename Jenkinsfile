@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'node-app-image'
-        DOCKER_TAG = "${BUILD_NUMBER}"
+        DOCKER_TAG = 'latest' //"${BUILD_NUMBER}"
         CONTAINER_NAME = 'node-app-container'
         PORT = '3000'
     }
@@ -30,15 +30,19 @@ pipeline {
         //     steps {
         //         echo 'Stopping previous container...'
         //         script {
-        //             bat '"'
+        //             bat """
         //                 if docker ps -a --format '{{.Names}}' | grep -q ${CONTAINER_NAME}; then
         //                     docker stop ${CONTAINER_NAME}
         //                     docker rm ${CONTAINER_NAME}
         //                 fi
-        //             '"'
+        //             """
         //         }
         //     }
         // }
+
+         // 2. Clear out any old running containers
+        // bat "docker stop node-app-container 2>nul || ver>nul"
+        // bat "docker rm node-app-container 2>nul || ver>nul"
 
         stage('Run Docker Container') {
             steps {
