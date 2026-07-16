@@ -5,7 +5,7 @@ pipeline {
         DOCKER_IMAGE = 'node-app-image'
         DOCKER_TAG = 'latest' //"${BUILD_NUMBER}"
         CONTAINER_NAME = 'node-app-container'
-        PORT = '3000'
+        PORT = '4000'
     }
 
     stages {
